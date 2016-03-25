@@ -62,14 +62,21 @@ h2,span{
 p{
 	text-indent: 32px;
 }
+.article{
+	height: 300px;
 
+}
+#con{
+	margin-left: 20px;
+}
 #djpg{
 	width: 120px;
 	height: 120px;
 	border: 1px solid #cbcbcb;
 	text-align: center;
-	margin-left: 40px;
+	margin-left: 20px;
 	margin-bottom: 20px;
+	float: left;
 }
 #text{
 	height: 20px;
@@ -80,6 +87,7 @@ p{
 #p1{
 	width: 75%;
 	height: 75%;
+
 }
 table{
 	border-collapse: collapse;

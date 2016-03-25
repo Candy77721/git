@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+body{
+	border:1px solid red;
+	
+	margin: 0px;
+}
+#container{
+	width:980px;
+	height:1386px;
+	padding: 0px 44px 0px 44px;
+	border:1px solid red;
+}
+#header{
+	width:892px;
+	height:61px;
+	font-size: 12px;
+	font-family:"黑体";
+}
+#logo{
+	width: 110px;
+	height:61px;
+	background: #D55D5C;
+	color:#ffffff;
+	display:table-cell;      
+	vertical-align:bottom;  
+}
+#date{
+	width:892px;
+	color:#d55d5c;
+	margin-top: -14px;
+	text-align: right;
+}
+#line{
+	width:892px;
+	height: 2px;
+	background: #93848c;
+	position: absolute;
+	margin-top: 0px;
+}
