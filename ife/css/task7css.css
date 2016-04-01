@@ -1,0 +1,545 @@
+@charset "utf-8";
+html,body,#mianContainer{
+	width:1281px;
+	height:4554px;
+	margin: 0 auto;
+	font-family: "微软雅黑";
+}
+/*主体框架*/
+	#navContainer{
+		height:58px;
+	}
+
+	#newlifeContainer{
+		height: 690px;
+	}
+
+	#showContainer{
+		height: 250px;
+	}
+	#knowContainer{
+		height: 360px;
+		background: #ededed;
+		font-size: 48px;
+		color: #a0a0a0;
+		text-align: center;
+	}
+
+	#selectContainer{
+		height: 340px;
+		background: url(../images/select.jpg);
+		color: white;
+		text-align: center;
+	}
+
+	#activeContainer{
+		height: 600px;
+	}
+	#newworldContainer{
+		height: 566px;
+	}
+	#timesContainer{
+		height: 520px;
+		/*background: red;*/
+	}
+	#inputContainer{
+		height: 754px;
+		text-align: center;
+
+	}
+	#emailContainer{
+		height: 358px;
+		color: white;
+		background: #32363e;
+		text-align: center;
+	}
+	#backContainer{
+		height: 28px;
+		color:white;
+		padding-top: 30px;
+		background: #303030;
+	}
+
+/*navContainer*/
+	#navContent{
+		font-size: 16px;
+		/*font-family: "黑体";*/
+		float: right;
+	}
+	#navContainer>img{
+		float: left;
+	}
+	#navul>li{
+		list-style: none;
+		float: left;
+		margin-right: 45px;
+	}
+	#login{
+		color: #e65051;
+		float: right;
+		margin-right: 65px;
+		margin-left: -10px;
+	}
+	#login>img{
+		float: left;
+	}
+	li>a{
+		text-decoration: none;
+		color: black;
+	}
+	li>a:hover,#a1{
+		color: #e65051;
+	}
+	#line{
+		width: 65px;
+		height:2px;
+		background: #e65051;
+		position:relative;
+		margin: 56px 0px 0px 20px;
+	}
+
+/*newlifeContainer*/
+	#newlifeContainer>img{
+		float: left;
+	}
+	#lifeContent{
+		height:690px;
+		/*font-family: "微软雅黑";*/
+		position: relative;
+		margin-top: -690px;
+		float: left;
+		color: white;
+	}
+	#lifeContent>div{
+		float: left;
+	}
+	#time{
+		width:480px;
+		height:58px;
+		font-size: 60px;
+		margin: 215px 0px 0px 115px;
+	}
+	#new{
+		width:300px;
+		height: 58px;
+		font-size: 21px;
+		line-height: 33px;
+		margin: 302px 0px 0px -470px;
+	}
+	#start{
+		width:330px;
+		height: 65px;
+		background: #e74f4d;
+		font-size: 32px;
+		margin:427px 0px 0px -470px;
+		display: table-cell;
+		text-align: center;
+		line-height: 65px
+	}
+
+/*showContainer*/
+	#showcontent1{
+		height: 120px;
+	}
+	#showcontent1>div{
+		width: 320px;
+		float: left;
+		text-align: center;
+		padding-top: 20px;
+	}
+	#showcontent2{
+		height: 130px;
+		/*font-family: "微软雅黑";*/
+		color: #ababab;
+		font-size: 14px;
+	}
+	#showcontent2>div[id*="showtext"]{
+		width: 158px;
+		float: left;
+		text-align: center;
+		margin: 35px 80px 0px 80px;
+	}
+	#split{
+		width: 2px;
+		background: #ababab;
+		margin-top: 35px;
+		height: 52px;
+		float: left;
+
+	}
+	
+/*knowContainer*/
+	#knowimage{
+		height: 180px;
+		padding-top:50px;
+	}
+
+/*selectContainer*/
+	#selectContainer>#text1{
+		font-size: 20px;
+		padding-top:50px;
+	}
+	#selectContainer>#text2{
+		font-size: 12px;
+		padding-top:35px;
+	}
+	#lines{
+		width: 30px;
+		height: 2px;
+		background: white;
+		margin-left:630px;
+	}
+	#selectcontent{
+		margin: 0px 65px 0px 65px;
+	}
+	#selectcontent>div{    
+		width: 235;                            
+		float: left;
+		margin: 55px 15px 0px 15px;
+	}
+	input{
+		width: 235px;
+		height:36px;
+		background: white;
+		font-size: 12px;
+		color: #aaaaaa;
+		border-style: none;
+		padding-left:20px;
+	}
+	input[type="button"]{
+		font-size: 14px;
+		background: #be4e48;
+		color: white;
+	}
+	#province>ul{
+		width: 255px;
+		background: #e3e3e3;
+		margin-top:0px;
+		padding-left: 0px;
+	}
+
+	/*#province>ul>*/li[id*="province1_"]{
+		height: 25px;
+		text-align: left;
+		list-style-type:none;
+		color: black;
+		line-height: 25px;
+		padding-left: 40px;
+		/*margin-left: -5px;*/
+	}
+	#province>ul>li:hover{
+		background: #be4e4b;
+		color: white;
+		list-style-type:disc;
+		list-style-position: inside;
+		padding-left: 28px;
+
+	}
+	#provinces{
+		
+	}
+	#check{
+		width: 18px;
+		height:35px;
+		position: relative;
+		margin:-35px 5px 0px 225px;
+		padding-right: -10px;
+	}
+
+/*activeContainer*/
+	#activecontent{
+		width: 1060px;
+		margin: 0 auto;
+		padding-top: 100px;
+	}
+	#activecontent>div[id*="active"]{
+		width: 220px;
+		float: left;
+		margin: 0px 20px 0px 20px;
+	}
+	div[id*="contentt"]{
+		width: 220px;
+		color: #8a8a8a;
+		/*font-family: "微软雅黑";*/
+		line-height: 30px;
+		text-align: center;
+	}
+	div[id*="contentt1"]{
+		font-size: 14px;
+		color: black;
+	}
+	#contentt31{
+		font-size: 24px;
+		letter-spacing: 20px;
+		color: black;
+		text-align: center;
+	}
+	div[id*="contentp"]{
+		width: 220px;
+		height:340;
+	}
+
+/*newworldContainer*/
+	#newworld1{
+		width: 851px;
+		height:566px;
+		background: url(../images/new.jpg) repeat;
+		text-align: center;
+		float: left;
+	}
+	#newworld2{
+		width: 430px;
+		float: left;
+		height:566px;
+		/*background: red;*/
+		text-align: center;
+	}
+	div[id*="newtext"]{
+		color: white;
+	}
+	#newtext1{
+		font-size: 42px;
+		padding-top: 135px;
+	}
+	#newtext2{
+		font-size: 100px;
+	}
+	#newtext3{
+		padding-top: 20px;	
+		font-size: 18px;
+	}
+	#trangle2{
+		border-top: 17px dashed transparent;
+		border-bottom: 17px dashed transparent;
+		border-right: 30px solid white;
+		float:right;
+		margin-top:265px;
+	}
+	#new_title{
+		font-size: 18px;
+		margin-top: 145px;
+	}
+	#new_title>span{
+		color: rgb(233,132,132);
+	}
+	#new_content{
+		width:250px;
+		line-height: 25px;
+		margin:25px auto 0px auto;
+		opacity: 0.5;
+		text-align: left;
+	}
+	#new_more{
+		width: 90px;
+		height: 30px;
+		font-size: 14px;
+		color: rgb(233,132,132);
+		border-style: solid;
+		border-width: 1px;
+		line-height: 30px;
+		margin: 50px auto 0px auto;
+	}
+	#new_circle{
+		width:90px;
+		height: 40px;
+		margin: 25px auto 0px auto;
+	}
+	div[id*="circle1"]{
+		width: 10px;
+		height: 10px;
+		color: rgb(145,145,145);
+		border-radius: 6px;
+		border-style: solid;
+		border-width: 1px;
+	}
+	
+	#circle1_1,#circle1_2,#circle1_3{
+		float: left;
+		margin:0px 8px 0px 8px;
+	}
+	#circle1_1{
+		background: rgb(145,145,145);
+	}
+/*timesContainer*/
+	#times1,#times2,#times3{
+		width: 425px;
+		height: 520px;
+		float: left;
+	}
+	#times1{
+		color: white;
+		background: #e74f4d;
+	}
+
+	#times3{
+		width: 430px;
+		/*background: red;*/
+		background: url(../images/tran.jpg);
+		
+	}
+	div[id*="times_content"]{
+		text-align: center;	
+		font-size: 20px;
+	}
+	#times_content1_1,#times_content2_1{
+		margin-top: 170px;
+	}
+	#times_line1_1,#times_line2_1{
+		width: 25px;
+		height: 2px;
+		margin:25px 0px 25px 200px;
+	}
+	#times_line1_1{
+		background: white;
+	}
+	#times_line2_1{
+		background: #e74f4d;
+	}
+	#times_content3_2{
+		color: #e74f4d;
+	}
+	div[id*="times_content3"]{
+		width: 170px;
+		height: 40px;
+		line-height: 40px;	
+		border-style: solid;
+		border-width: 1px;
+		margin-left: 140px;
+	}
+	#trangle{
+		border-top: 17px dashed transparent;
+		border-bottom: 17px dashed transparent;
+		border-left: 30px solid white;
+		margin-top: 245px;
+	}
+	
+/*inputContainer*/
+	#inputtitle{
+		padding:110px 430px 110px 430px;
+	}
+	#title1,#title2{
+		width:418px;
+	}
+	#titleline{
+		width: 30px;
+		height: 2px;
+		margin:10px 0px 15px 200px;
+		background: #ea6563;
+	}
+
+	#title1{
+		font-size: 20px;
+	}
+	#title2{
+		color: #cfcfcf;
+	}
+	#input_left_content{
+		width:420px;
+		float: left;
+	}
+	#input_right_content{
+		width: 660px;
+		height: 280px;
+		float: left;
+		margin-left: 70px;
+		
+	}
+	div[id*="content_text"]{
+		width:280px;
+		text-align: left;
+		padding-left:140px;
+		line-height: 20px;
+	}
+	#content_text1{
+		margin-bottom: 40px;
+	}
+	#left_t1{
+		font-size: 14px;
+		color: black;
+	}
+	#left_t2{
+		/*width:280px;
+		height: 40px;*/
+		color: #cfcfcf;
+		padding: 20px 0px 20px 0px;
+	/*	overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;*/
+	}
+	#left_t2>span,#left_t3>span{
+		color: #cfcfcf;
+		float: right;
+	}
+	#name,#age,#phone,#address,#you_life,#commit{
+		height: 40px;
+		background: rgb(237,237,239);
+		color: rgb(100,100,100);
+		float: left;
+		text-align: left;
+		line-height: 40px;
+		margin: 0px 20px 15px 0px;	
+		padding-left: 10px;
+	}
+	#name,#age,#phone,#address{
+		width: 300px;
+	}
+	#you_life,#commit{
+		width: 630px;
+	}
+	#you_life{
+		height:120px;
+	}
+	#commit{
+		color: black;
+		text-align: center;
+		font-size: 14px;
+	}
+
+/*emailContainer*/
+	#emailpost{
+		width: 510px;
+		height:40px;
+		font-size: 18px;
+		line-height: 40px;
+		background: white;
+		margin: 0px 410px 0px 400px;
+	}
+	#emailtext1{
+		font-size: 20px;
+		padding-top:90px;
+
+	}
+	#emailtext2{
+		width: 480px;
+		height:40px;
+		margin: 10px 410px 0px 410px;
+	}
+	#emailpt,#emailit{
+		width: 430px;
+		height:40px;
+	}
+	#emailit{
+		width: 420px;
+		float: left;
+		font-size: 16px;
+		padding: 0px 0px 0px 10px;
+		border-width: 0px;
+	}
+	#emailip{
+		width:80px;
+		height:40px;
+		float: right;
+		background: rgb(113,113,121);
+		position: relative;
+		margin-top: -40px;
+	}
+
+/*backContainer*/
+	#foot1{
+	margin-left: 100px;
+	float: left;
+	}
+	#foot2{
+	margin-right:40px;
+	float: right;
+	}
