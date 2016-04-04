@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		任务十三
+	</title>
+	<meta http-equiv="Content-type" content="text/html" charset="utf-8"/>
+</head>
+<body>
+	<div id="container" align="center" style="padding-top: 100px;">
+		<label>请输入北京今天空气质量：
+			<input id="aqi_input" type="text"></input>
+		</label>
+		<button id="button" onclick="btn_click()">确认填写</button>
+		<div>
+			您输入的值是：
+			<span id="id_aqi_display">
+				尚未录入
+			</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		 function btn_click(){
+			var scanner=document.getElementById("aqi_input");
+			var display=document.getElementById("id_aqi_display");
+				if(scanner.value==null||scanner.value.trim()==""){
+					display.innerHTML="尚未录入";
+				}else{
+					display.innerHTML=scanner.value;
+				}
+		}
+	</script>
+</body>
+</html>
