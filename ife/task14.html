@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		任务十四
+	</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+</head>
+<body onload="init()">
+	<div id="container" style="align:center;text-align: center; ">
+		<h1>污染城市列表</h1>
+		<ul id="citys" style=" list-style-type: none; font-size: 18px; background: #cecece; text-align: center;">
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var citys=document.getElementById("citys");
+		var city=[
+			["北京",190],
+			["上海",200],
+			["福州",50],	
+			["广州",150],
+			["成都",90],
+			["西安",100]
+			];
+		var num=["第一名： ","第二名： ","第三名： "];
+		var ccity=new Array();
+		//初始化
+		function init(){
+			screen_city();
+			sort_city();
+			for (var i = 0; i < ccity.length; i++) {
+			//为城市列表创建对象
+				cityi=document.createElement("li");	
+				cityi.innerHTML=num[i]+ccity[i];
+				cityi.style.cssText="padding:20px; margin-left:-80px;"
+				//将创建的li标签添加到城市列表中
+				citys.appendChild(cityi);
+			}
+		}
+		//筛选空气质量大于100的城市
+		function screen_city(){
+			var j=0;
+			for (var i = 0; i < city.length; i++) {
+				if(city[i][1]>100){
+					ccity[j]=city[i];	
+					j++;
+				}
+			}
+		}
+		//对城市空气质量按从高到底排序
+		function sort_city(){
+			var teap;
+			var k;
+			var j=0;
+			for (var i = 0; i < ccity.length-1; i++) {
+				k=i;
+				for (j=i+1;j<ccity.length;j++) {
+					if (ccity[k][1]<ccity[j][1]) {
+						k=j;
+					}
+				}
+				if(k!=i){
+						teap=ccity[k];
+						ccity[k]=ccity[i];
+						ccity[i]=teap;
+				}
+			}
+		}
+	</script>
+</body>
+</html>
