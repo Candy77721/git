@@ -28,14 +28,8 @@
 		function init(){
 			screen_city();
 			sort_city();
-			for (var i = 0; i < ccity.length; i++) {
-			//为城市列表创建对象
-				cityi=document.createElement("li");	
-				cityi.innerHTML=num[i]+ccity[i];
-				cityi.style.cssText="padding:20px; margin-left:-80px;"
-				//将创建的li标签添加到城市列表中
-				citys.appendChild(cityi);
-			}
+			display();
+			
 		}
 		//筛选空气质量大于100的城市
 		function screen_city(){
@@ -64,6 +58,17 @@
 						ccity[k]=ccity[i];
 						ccity[i]=teap;
 				}
+			}
+		}
+		//将空气质量大于100的城市显示
+		function display()
+		{
+			for (var i = 0; i < ccity.length; i++) {
+			cityi=document.createElement("li");	
+			cityi.innerHTML=num[i]+ccity[i];
+			cityi.style.cssText="padding:20px; margin-left:-80px;"
+			//将创建的li标签添加到城市列表中
+			citys.appendChild(cityi);
 			}
 		}
 	</script>
