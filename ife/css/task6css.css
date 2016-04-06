@@ -97,7 +97,7 @@ body{
 #text1>span{
 	font-size: smaller;
 	position:relative;
-	/*bottom: -1px;*/
+	bottom: -1px;
 }
 #text2{
 	font-size: 12px;

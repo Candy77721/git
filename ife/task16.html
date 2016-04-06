@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		任务十六
+	</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+	
+	<style type="text/css">
+		#addcity{
+			height: 240px;
+			background: #cecece;
+			text-align: center;
+			padding-top: 30px;
+		}
+		#addcity>div{
+			height: 50px;
+			margin:0px 550px 0px 450px;
+		}
+		label{
+			float: right;
+		}
+		#add-btn{
+			width: 100px;
+		}
+		#display{
+			background: #dedede;
+			padding: 30px;
+			text-align: center;
+		}
+		#aqi-table{
+			background: white;
+			font-size: 18px;
+			text-align: center;
+			border-collapse: collapse;
+			margin-left:500px;
+		}
+		td{
+			width: 120px;
+			border:1px solid black;
+		}
+		td>span{
+			color: blue;
+			font-size: 16px;
+			font-family: "微软雅黑";
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="addcity">
+			<h1>添加城市</h1>
+			<div id="city">
+				<label>城市名称：
+					<input id="aqi-city-input" type="text">
+				</label>
+			</div>
+		    
+		    <div id="air">
+			    <label>空气质量指数：
+			    	<input id="aqi-value-input" type="text">
+			    </label>
+			</div>
+			<div id="add">
+				<button id="add_btn">确认添加</button>
+			</div>
+		</div>
+		<div id="display">
+		    <table id="aqi-table">
+		    	<thead>
+		    		<h2>城市空气质量统计</h2>
+		    	</thead>
+		    	<tr>
+      				<td>城市</td>
+      				<td>空气质量</td>
+      				<td>操作</td>
+    			</tr>
+    			<tr>
+      				<td>北京</td>
+      				<td>180</td>
+      				<td><span id="delete">删除</span></td>
+    			</tr>
+		    </table>
+		</div>
+	</div>
+	<script src="js/task16js.js"></script>
+</body>
+</html>
