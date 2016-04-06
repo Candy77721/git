@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		任务十五
+	</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+</head>
+
+<body>
+<div id="container" align="center" style="padding-top: 5%;">
+		<h1>空气质量排序</h1>
+		<div id="sort_previrous" style=" background:#cecece;font-size:18px;float: left; height: 240px; width: 40%;"><h2>排序前</h2>
+			<ul id="source" style="list-style-type: none;">
+			    <li>北京空气质量：<b>90</b></li>
+			    <li>上海空气质量：<b>70</b></li>
+			    <li>天津空气质量：<b>80</b></li>		
+			    <li>广州空气质量：<b>50</b></li>
+			    <li>深圳空气质量：<b>40</b></li>
+			    <li>福州空气质量：<b>32</b></li>
+			    <li>成都空气质量：<b>90</b></li>
+		  	</ul>
+	  	</div>
+	  	
+	  	<div id="sort_next" style="background:#aeaeae;font-size:18px; float: right; width: 40%; height: 240px;"><h2>排序后</h2>
+		   	<ul id="resort" style="list-style-type: none;">	
+
+		   	</ul>
+	   	</div>
+	   	<div>
+			<button id="sort-btn" style="width: 100px;height: 68px; margin-top:60px;">排序</button>
+		</div>
+</div>
+	<script type="text/javascript">
+	var flag=true;
+	init();
+	function btnHandle() {
+		if(flag==true){
+	  		var data=getData();
+			data=sortAqiData(data);	
+	  		render(data);
+	  		flag=false;
+	  	}
+	}
+
+	/**
+	 * getData
+	 * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
+	 * 返回一个二维数组
+	 */
+	function getData() {
+		//获取source的所有子节点
+		var source=document.getElementById('source').getElementsByTagName('li');
+		var citys=new Array();
+		for (var i = 0; i < source.length; i++) {
+			var city=new Array();
+			city[0]=source[i].firstChild.nodeValue.substr(0,2);
+			city[1]=source[i].lastChild.innerHTML;
+			citys[i]=city;
+		}
+		return citys;
+	}
+
+	/**
+	 * sortAqiData
+	 * 按空气质量对citys进行从小到大的排序
+	 * 返回一个排序后的数组
+	 */
+	function sortAqiData(citys) {
+		var teap;
+		var k;
+		var j=0;
+		for (var i = 0; i < citys.length-1; i++) {
+			k=i;
+			for (j=i+1;j<citys.length;j++) {
+				if (citys[k][1]>citys[j][1]) {
+				k=j;
+				}
+			}
+			if(k!=i){
+					teap=citys[k];
+					citys[k]=citys[i];
+					citys[i]=teap;
+			}
+		}
+		return citys;	
+	}
+
+	/**
+	 * render
+	 * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
+	 */
+	function render(citys) {
+		var resort=document.getElementById("resort");
+		var num=["第一名","第二名","第三名","第四名","第五名","第六名","第七名"];
+		var air="空气质量：";
+		for (var i = 0; i < citys.length; i++) {
+			var cityli=document.createElement("li");
+			cityli.innerHTML=num[i]+citys[i][0]+air+"<b>"+citys[i][1]+"</b>";
+			resort.appendChild(cityli);
+		}
+	}
+	function init(){
+		var btn=document.getElementById("sort-btn");
+		if(btn!=null){
+			btn.onclick=btnHandle;
+		}
+	}
+</script>
+</body>
+</html>
