@@ -37,6 +37,8 @@ function sort_div(){
 			{
 				var divi=div_list[i].cloneNode(true);
 				var divj=div_list[j].cloneNode(true);
+				divi.onclick=del_div;
+				divj.onclick=del_div;
 				container.replaceChild(divj,div_list[i]);
 				container.replaceChild(divi,div_list[j]);
 			}
