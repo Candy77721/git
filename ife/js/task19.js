@@ -79,14 +79,19 @@ function judge(){
 			break;
 		case "left_del": 
 			{
-				if(div_count>0)
-				container.removeChild(container.firstChild);	
+				if(div_count>0){
+					alert(container.firstChild.innerHTML);
+					container.removeChild(container.firstChild);
+				}
 			}
 			break;
-		case "right_del":{ 
-			if (div_count>0)
-				container.removeChild(container.lastChild);
-		}
+		case "right_del":
+			{ 
+				if (div_count>0){
+					alert(container.lastChild.innerHTML);
+					container.removeChild(container.lastChild);
+				}
+			}
 			break;
 		case "sort":sort_div();
 			break;
