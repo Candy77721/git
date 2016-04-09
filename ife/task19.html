@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		任务十九
+	</title>
+	<meta http-equiv="Contennt-Type" content="text/html" charset="utf-8" />
+	<style type="text/css">
+		button{
+			background: white;
+			border: 1px solid black;
+			border-radius: 5px;
+		}
+		#container{
+			height:520px;
+			background: #cecece;
+			margin-top: 20px;
+		}
+		#container>div{
+			width: 20px;
+			background: red;
+			color: white;
+			float: left;
+			font-family: "微软雅黑";
+			font-size: 16px;
+			line-height: 40px;
+			text-align: center;
+			margin-right: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="input">
+		<label>请输入一个数：</label>
+		<input id="scan" type="text" />
+		<button id="left_add" value="left_add">左侧入</button>
+		<button id="right_add" value="right_add">右侧入</button>
+		&nbsp;
+		<button id="left_del" value="left_del">左侧出</button>
+		<button id="right_del" value="right_del">右侧出</button>
+		<button id="sort" value="sort">排序</button>
+	</div>
+	<div id="container">
+	</div>
+	<script src="js/task19.js"></script>
+</body>
+</html>

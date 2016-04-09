@@ -16,6 +16,7 @@ function judge(){
 	var value=this.value;
 	var newdiv=document.createElement("div");
 	var scan=document.getElementById('scan');
+	var div_count=container.getElementsByTagName('div').length;
 	if(scan.value==""){
 		return;
 	}
@@ -26,10 +27,16 @@ function judge(){
 			break;
 		case "right_add": container.appendChild(newdiv);
 			break;
-		case "left_del": container.removeChild(container.firstChild);
+		case "left_del": {
+			if(div_count>0)
+				container.removeChild(container.firstChild);
 			break;
-		case "right_del": container.removeChild(container.lastChild);
+		}
+		case "right_del":{ 
+			if (div_count>0)
+				container.removeChild(container.lastChild);
 			break;
+		}
 	}
 }
 onbind_button();
