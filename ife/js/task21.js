@@ -1,11 +1,12 @@
-var container1=document.getElementById('container1');
-var container2=document.getElementById('container2');
+
+
 var ok=document.getElementById('ok');
 var value1=document.getElementById('value1');
 ok.onclick=add_love;
 value1.onfocus=add_tag;
 //container2增加爱好操作
 function add_love(){
+	var container2=document.getElementById('container2');
 	var values=document.getElementById('scan').value;
 	var divs=container2.getElementsByTagName("div");
 	if(values==""){
@@ -34,9 +35,10 @@ function add_love(){
 }
 //container1增加tag操作
 function add_tag(){
-	document.onkeydown=function(e){
+	this.onkeydown=function(e){
 		e=e||event;
 		if(e.keyCode==32||e.keyCode==13||e.keyCode==188){
+			container1=document.getElementById('container1');
 			var divs=container1.getElementsByTagName("div");
 			value1t=value1.value;
 			value1t=value1t.replace(/\s+/g,"");
@@ -60,6 +62,8 @@ function add_tag(){
 				container1.removeChild(divs[0]);
 			}
 			value1.value="";
+			//阻止输入空格和，
+			return false;
 		}
 	}
 }
