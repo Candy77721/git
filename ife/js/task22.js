@@ -7,7 +7,6 @@ function start(){
 	var one_node=document.getElementById("one");
 	//先序遍历
 	before_ergodic(one_node);
-	var length=div_list.length;
 	cur=new Date().getTime();
 	timer=window.setInterval("redaction(div_list.pop())",500);
 }
@@ -39,7 +38,7 @@ function redaction(node){
 	}
 	out_node=node;
 	node.style.background="blue";
-	if(new Date().getTime()-cur>7500){
+	if(new Date().getTime()-cur>75000){
 		window.clearInterval(timer);
 		window.setTimeout("out_node.style.background='white'",500);
 	}
