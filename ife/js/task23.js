@@ -7,6 +7,7 @@ var timer;
 var value=null;
 var out_node=null;
 function query(){
+	// value=null;
 	var one_node=document.getElementById("one");
 	var scan=document.getElementById("scan");
 	value=scan.value;
