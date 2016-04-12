@@ -6,33 +6,69 @@
 	</title>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 	<style type="text/css">
-		#parent {
-			height: 300px; 
-			background: red;
+		div{
+			border:1px solid black;
+			margin: 5px;
+			padding: 5px;
 			display: flex;
+			flex: 1;
 		}
-		#child {
-		  width: 100px; 
-		  height: 100px; 
-		  background: white;
-		  margin: auto; 
-		}	
+		#five{
+			height: 20px;
+		}
+		#ergodic{
+			border:none;
+			justify-content:center;	
+		}
 	</style>
 </head>
 <body>
-	<div id="parent">
-		<div id="child">
-			
+	<div id="one">one
+		<div id="tow1">tow1
+			<div id="three1">three1
+				<div id="four1">four1</div>
+				<div id="four2">four2</div>
+				<div id="four3">four3</div>
+				<div id="four4">four4</div>
+			</div>
+			<div id="three2">three2
+			</div>
+			<div id="three3">three3
+				<div id="four5">four5</div>
+				<div id="four6">four6</div>
+			</div>
 		</div>
-		<div id="child">
-			
+		<div id="tow2">tow2
+			<div id="three4">three4
+				<div id="four7">four7
+				</div>
+				<div id="four8">four8
+				</div>
+				<div id="four9">four9
+				</div>
+			</div>
+			<div id="three5">three5
+				<div id="four10">four10
+					<div id="five">five
+					</div>
+				</div>
+				<div id="four11">four11
+				</div>
+			</div>
+			<div id="three6">three6
+			</div>
 		</div>
-		<div id="child">
-			
-		</div>
-		<div id="child">
-			
+		<div id="tow3">tow3
 		</div>
 	</div>
+	<div id="ergodic">
+		<button id="before">先序遍历</button>
+		<input id="scan" type="text"></input>
+		<button id="select">查找</button>
+		<button id="select">删除</button>
+		<input id="scan1" type="text"></input>
+		<button id="select">添加</button>
+	</div>
+	<script src="js/task24.js"></script>
 </body>
 </html>

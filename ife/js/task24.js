@@ -4,19 +4,21 @@ ergodic.onclick=start;
 select.onclick=query;
 var div_list=new Array();
 var timer;
-var value=null;
 var out_node=null;
-function query(){
+//先序遍历绑定的方法
+function start(){
 	var one_node=document.getElementById("one");
-	var scan=document.getElementById("scan");
-	value=scan.value;
 	//先序遍历
 	before_ergodic(one_node);
 	cur=new Date().getTime();
 	timer=window.setInterval("redaction(div_list.pop())",500);
 }
-function start(){
+
+//查找绑定的方法
+function query(){
 	var one_node=document.getElementById("one");
+	var scan=document.getElementById("scan");
+	value=scan.value;
 	//先序遍历
 	before_ergodic(one_node);
 	cur=new Date().getTime();
@@ -34,6 +36,7 @@ function before_ergodic(node){
 }
 //输出头结点
 function input_head(node){
+	// alert(node.id);
 	node.style.background="white";
 	div_list.unshift(node);
 }
@@ -61,9 +64,7 @@ function redaction(node){
 	if(new Date().getTime()-cur>11000){
 		window.clearInterval(timer);
 		window.setTimeout("out_node.style.background='white'",500);
-		if(value!=null){
-			alert("没有找到该节点");
-			value=null;
-		}
+		alert("没有找到该节点");
+		// 
 	}
 }
