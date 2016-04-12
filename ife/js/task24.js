@@ -28,6 +28,7 @@ function start(){
 	ornull();
 	cur=new Date().getTime();
 	timer=window.setInterval("redaction(div_list.pop())",500);
+	ornull();
 }
 //添加
 function insert(){
@@ -35,16 +36,19 @@ function insert(){
 	if(!check){
 		return;
 	}
+	ornull();
 	var scan=document.getElementById("scan");
 	value=scan.value;
-	while(div_list.length!=0){
+	var length=div_list.length;
+	for (var i = 0; i < length; i++) {
 		var node=div_list.pop();
 		if(node.style.background=="yellow"){
-			alert(node.id);
 			var new_node=document.createElement("div");
 			new_node.style.background="white";
 			new_node.innerHTML=value;
 			node.appendChild(new_node);
+			div_list=new Array();
+			return;
 		}
 	}
 }
