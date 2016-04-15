@@ -173,6 +173,7 @@ function add_new_node(node){
 function remove(){
 	// //判断是否有被选中项
 	if(!check){
+		alert("请选择要删除的节点");
 		return;
 	}
 	var length=div_list.length;
@@ -193,6 +194,7 @@ function remove(){
 			return;
 		}
 	}
+	alert("没有找到该节点");
 }
 //初始化
 function init(){
