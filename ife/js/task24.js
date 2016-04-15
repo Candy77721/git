@@ -28,7 +28,6 @@ function start(){
 	ornull();
 	cur=new Date().getTime();
 	timer=window.setInterval("redaction(div_list.pop())",500);
-	ornull();
 }
 //添加
 function insert(){
@@ -47,6 +46,7 @@ function insert(){
 			new_node.style.background="white";
 			new_node.innerHTML=value;
 			node.appendChild(new_node);
+			new_node.onclick=clickHandler;
 			div_list=new Array();
 			return;
 		}
@@ -77,6 +77,7 @@ function remove(){
 }
 //节点点击事件
 var clickHandler=function node_click(event){
+	//取消事件传递
 	event.stopPropagation();
 	if(!check){
 		this.style.background="yellow";
@@ -127,6 +128,7 @@ function redaction(node){
 	node.style.background="blue";
 	if(node.id==value){
 		window.clearInterval(timer);
+		ornull();
 	}
 	if(new Date().getTime()-cur>second){
 		window.clearInterval(timer);
@@ -135,6 +137,7 @@ function redaction(node){
 			alert("没有找到该节点");
 			// 清除上次查找的值
 			value=null;
+			ornull();
 		}
 	}
 }
