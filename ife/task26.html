@@ -1,10 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>任务二十六</title>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+	<style type="text/css">
+		#universe{
+			background: black;
+			padding: 8% 0  8% 0;
+
+		}
+		#planet{
+			width: 300px;
+			height: 300px;
+			background: blue;
+			border-radius: 150px;
+			margin: 0 auto;
+
+		}
+
+		div[id*="ship"]{
+			width: 100px;
+			height: 40px;
+			font-family: "微软雅黑";
+			position: relative;
+			text-align: center;
+			line-height: 40px;
+			border-radius: 20px;
+			background: rgb(153,153,153);
+			margin: 0 auto 50px auto;
+		}
+		#flying{
+			width: 20px;
+			height: 40px;
+			background: blue;
+			float: right;
+			border-top-right-radius: 20px;
+			border-bottom-right-radius: 20px;
+		}
+		#signal{
+			width: 360px;
+			position: relative;
+			font-size: 16px;
+			color: red;
+			text-align: center;
+			font-family: "微软雅黑";
+			border:1px solid #cecece;
+		}
+		button{
+			border-width: 1px;
+			background: white;	
+			border-radius: 5px;
+			cursor: pointer;
+			font-weight: bold;
+		}	
+	</style>
 </head>
 <body>
-	
+	<div id="universe">
+		<div id="ship1">
+			1号-100%
+			<div id="flying">
+			</div>
+		</div>
+		<div id="planet">
+		</div>
+	</div>
+	<div id="signal">
+		<div id="signal1">
+			<label>对1号飞船下达指令：</label>
+			<button id="star1">开始飞行</button>
+			<button id="stop1">停止飞行</button>
+			<button id="destroy1">销毁</button>
+		</div>
+		<button id="fly">新的飞船起飞</button>
+	</div>
+	<script src="js/task26.js"></script>
 </body>
 </html>
