@@ -27,6 +27,7 @@ function checking(){
 	}else if(length>16||length<4){
 		show.innerHTML="必填，长度为4~16个字符";
 	}else{
+		show.innerHTML="名称格式正确";
 		input.style.cssText="border-color:green;";
 		show.style.color="green";
 	}
