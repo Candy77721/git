@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>任务三十一</title>
+	<meta http-equiv="Content-Type" content="text/css" charset="utf-8" />
+	<style type="text/css">
+	#container{
+		font-family: "微软雅黑";
+		text-align: center;
+		/*text-align: right;*/
+	}
+	#radios{
+		font-size: 18px;
+	}
+	#radios>input{
+		width: 20px;
+		height: 20px;
+		/*background: red;*/
+	}
+	select{
+		border-radius: 5px;
+	}
+	option{
+		height: 20px;
+		background: white;
+		font-size: 16px;
+		text-indent: 10px;
+		padding: 10px;
+	}
+	#school,#company{
+		font-size: 16px;
+		font-weight: bold;
+		margin-top:30px;
+		margin-right: 200px;
+		text-align: right;
+	}
+
+	#school>span{
+		margin-right: 30px;
+	}
+	#citys{
+		width: 210px;
+		height: 40px;
+	}
+	#schools{
+		width: 340px;
+		height: 40px;
+		margin-left: 50px;
+	}
+	#company>input{
+		width: 600px;
+		height: 40px;
+		border-radius: 5px;
+		border: 1px solid rgb(201,201,201);
+		text-indent: 10px;
+		outline: none;
+		margin-left: 30px;
+	}
+	#company>input:focus{
+		border: 2px solid rgb(98,174,236);
+	}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="radios">
+			<input id="yes" type="radio" name="person" checked value="在校生">在校生</input>
+			<input id="no" type="radio" name="person" value="非在校生">非在校生</input>
+		</div>
+		<div id="school">
+			<span>学校</span>
+			<select id="citys" multiple size="1">
+				<option selected>北京</option>
+				<option>合肥</option>
+			</select>
+			<select id="schools" multiple size="1">
+				<option>北京大学</option>
+				<option>清华大学</option>
+			</select>
+		</div>
+		<div id="company">
+			就业单位<input type="text"></input>
+		</div>
+	</div>
+	<script src="js/task31.js"></script>
+</body>
+</html>
