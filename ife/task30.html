@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>任务三十</title>
+	<meta http-equiv="Content-type" content="text/html" charset="utf-8"/>
+</head>
+<style type="text/css">
+	#container{
+		text-align: right;
+	}
+	#name,#password,#passwordOK,#email,#phone{
+		font-size: 24px;
+		font-family: "微软雅黑";
+		padding-top: 50px;
+		text-align: right;
+		margin-right: 150px;
+	}
+	.show{
+		color: rgb(180,180,180);
+		font-size: 22px;
+		font-family: "微软雅黑";
+		text-align: left;
+		margin-left: 170px;
+	}
+	#ID{
+		font-weight: bold;
+		margin:30px;
+	}
+	input{
+		width: 1006px;
+		height: 56px;
+		border-radius: 8px;
+		font-weight: bold;
+		font-size: 24px;
+		font-family: "微软雅黑";
+		font-size: 20px;
+		color: rgb(91,91,91);
+		text-indent: 1em;
+		outline:none;
+		border:2px solid rgb(210,210,210);
+	}
+	input:focus{
+		border:2px solid rgb(98,174,236);
+	}
+	#proving{
+		width: 100px;
+		height: 60px;
+		background: rgb(47,121,185);
+		color: white;
+		font-size: 24px;
+		font-family: "微软雅黑";
+		border-radius: 8px;
+		border-color:rgb(47,121,185);
+		outline:none;
+		cursor: pointer;
+		margin:30px 150px 0px 20px;
+	}
+</style>
+<body>
+	<div id="container">
+		<div id="name">
+			<label id="ID">名称</label>
+			<input class="input" type="text" autofocus></input>
+			<div class="show">
+				必填，长度为4~16个字符
+			</div>
+		</div>
+		<div id="password">
+			<label id="ID">密码</label>
+			<input class="input" type="password"></input>
+			<div class="show">
+				密码不能为空
+			</div>
+		</div>
+		<div id="passwordOK">
+			<label id="ID">确认密码</label>
+			<input class="input" type="password"></input>
+			<div class="show">
+				再次输入相同密码
+			</div>
+		</div>
+		<div id="email">
+			<label id="ID">邮箱</label>
+			<input class="input" type="email"></input>
+			<div class="show">
+				邮箱不能为空
+			</div>
+		</div>
+		<div id="phone">
+			<label id="ID">手机</label>
+			<input class="input" type="telephone"></input>
+			<div class="show">
+				手机不能为空
+			</div>
+		</div>
+		<button id="proving">提交</button>
+	</div>
+	
+	<script src="js/task30.js"></script>
+</body>
+</html>

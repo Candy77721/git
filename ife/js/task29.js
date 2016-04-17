@@ -25,10 +25,12 @@ function checking(){
 		show.style.color="red";
 		show.innerHTML="姓名不能为空";
 	}else if(length>16||length<4){
+		input.style.cssText="border-color:rgb(180,180,180);";
+		show.style.color="rgb(180,180,180)";
 		show.innerHTML="必填，长度为4~16个字符";
 	}else{
-		show.innerHTML="名称格式正确";
 		input.style.cssText="border-color:green;";
 		show.style.color="green";
+		show.innerHTML="名称格式正确";
 	}
 }
