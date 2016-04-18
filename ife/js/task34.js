@@ -32,19 +32,19 @@ function draw_line(){
 //判断边界
 function frontier(value){
 	switch(value){
-		case "TOP":if(o[1]<0){
+		case "TOP":if(o[1]==0){
 			alert("已到达上边界");
 			return false;
 		}break;
-		case "RIG":if(o[0]>405){
+		case "RIG":if(o[0]==405){
 			alert("已到达右边界");
 			return false;
 		}break;
-		case "BOT":if(o[1]>405){
+		case "BOT":if(o[1]==405){
 			alert("已到达下边界");
 			return false;
 		}break;
-		case "LEF":if(o[0]<0){
+		case "LEF":if(o[0]==0){
 			alert("已到达左边界");
 			return false;
 		}break;
@@ -55,18 +55,18 @@ function frontier(value){
 function action(){
 	var input=document.getElementById('input');
 	var block=document.getElementById("block");
+	//判断是否是GO指令
 	if(input.value=="GO"){
 		var i=(Math.abs(an)/90)%4;
-		o[0]+=go[i][0];
-		o[1]+=go[i][1];
 		if(!frontier(pos[i])){
-			o[0]-=go[i][0];
-			o[1]-=go[i][1];
 			return;
 		}
+		o[0]+=go[i][0];
+		o[1]+=go[i][1];
 		block.style.cssText="transform:translate("+o[0]+"px,"+o[1]+"px) rotate("+an+"deg)";
 		return;
 	}
+	//判断是否是其他指令
 	for(var key in imp){
 		//判断指令是否正确
 		if(input.value==key){
@@ -76,13 +76,14 @@ function action(){
 			}else{
 				an+=imp[key][0];
 			}
-			o[0]+=imp[key][1];
-			o[1]+=imp[key][2];
-			//边界判断
-			if(!frontier(key.substr(4,4))){
-				o[0]-=imp[key][1];
-				o[1]-=imp[key][2];
-				return;
+			//判断是否是TUN指令（TUN指令不移动）
+			if(key.substr(0,3)!="TUN"){
+				//边界判断
+				if(!frontier(key.substr(4,4))){
+					return;
+				}
+				o[0]+=imp[key][1];
+				o[1]+=imp[key][2];
 			}
 			block.style.cssText="transform:translate("+o[0]+"px,"+o[1]+"px) rotate("+an+"deg)";
 		}
@@ -90,14 +91,14 @@ function action(){
 }
 //按钮绑定事件
 function onbind(){
-	// count=0;
 	var implement=document.getElementById('implement');
 	implement.onclick=action;
 }
 function init(){
+	var block=document.getElementById("block");
 	//平移宽高
 	o=[0,0];
-	//倾斜角度
+	//块倾斜角度
 	an=0;
 	//指令：[倾斜角，左移宽度，上移高度]
 	imp={
@@ -113,7 +114,6 @@ function init(){
 	*/
 	go=[[0,-45],[45,0],[0,45],[-45,0]];
 	pos=["TOP","RIG","BOT","LEF"];
-	// alert(go[0][1]);
 	fill_num();
 	draw_line();
 	onbind();
