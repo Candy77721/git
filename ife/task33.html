@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		任务三十三
+	</title>
+	<meta http-equiv="Content-Type" content="text/css" charset="utf-8" />
+	<style type="text/css">
+		#container{
+			font-size: 20px;
+			font-family: "黑体";
+		}
+		#horizontal{
+			width: 465px;
+			height: 20px;
+			margin-left: 30px;
+			margin-bottom: 10px;
+		}
+		#horizontal>div{
+			width: 45px;
+			height: 20px;
+			float: left;
+			text-align: center;
+		}
+		#vertical{
+			width: 20px;
+			height: 450px;
+			float: left;
+		}
+		#vertical>div{
+			width: 20px;
+			height: 45px;
+			text-align: right;
+		}
+		#layout{
+			width: 450px;
+			height: 450px;
+			border:2px solid black;
+			margin-left: 30px;
+		}
+		#layout>#ho{
+			width:448px;
+			height:43px;
+			margin:0px 0px 45px 0px;
+			border:1px solid rgb(204,204,204);
+		}
+		#layout>#ver{
+			width:43px;
+			height:448px;
+			position: relative;
+			margin-top: -450px;
+			border:1px solid rgb(204,204,204);
+		}
+		#block{
+			width: 45px;
+			height: 45px;
+			position: absolute;
+			background: red;
+		}
+		#block>div{
+			width: 45px;
+			height: 15px;
+			background: blue;
+		}
+		#dictate{
+			margin-top:30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="horizontal"></div>
+		<div id="vertical"></div>
+		<div id="layout">
+			<div id="block">
+				<div></div>
+			</div>
+		</div>
+	</div>
+	<div id="dictate">
+		<input id="input" type="text" value="TUN LEF"></input>
+		<button id="implement">执行</button>
+	</div>
+	<script src="js/task33.js"></script>
+</body>
+</html>
