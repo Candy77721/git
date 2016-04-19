@@ -106,7 +106,6 @@ function rowChange(){
 function isGo(value){
 	//判断是否是单一GO指令
 	if(value=="GO"){
-		grid=1;
 		return true;
 	}else if(value.length>=4){//判断是否符合多指令的最低条件
 		var num=value.substr(3,value.length);
@@ -129,7 +128,6 @@ function isOther(value){
 	for(var key in imp){
 		//判断指令是否正确
 		if(value==key){
-			grid=1;
 			return true;
 		}else if(value.length>=9){
 			var num=value.substr(8,value.length);
@@ -151,19 +149,18 @@ function isOther(value){
 function checkOrder(){
 	if(rows!=0){
 		orders=input.value.split('\n');
-		var j=0;
+		var orderlist=orders;
 		//读取order中所有的命令
-		for (var i = 0; i <orders.length; i++) {
+		for (var i = 0; i <orderlist.length; i++) {
 			//判断是否是GO命令或者其他命令
-			if(!isGo(orders[i])&&!isOther(orders[i])){
-				column.childNodes[j++].style.background="red";
+			if(!isGo(orderlist[i])&&(!isOther(orderlist[i]))){
+				column.childNodes[i].style.background="red";
 			}
 		}
 	}
 }
 //执行命令
 function implementOrder(){
-	alert(text);
 	var i=0;
 	var timer=setInterval(function(){
 		if(i<orders.length){
@@ -176,20 +173,20 @@ function implementOrder(){
 }
 //绑定事件
 function onbind(){
-	// 1、 为执行按钮绑定点击事件
+	//行数改变事件
+	input.addEventListener('keyup', rowChange,false);
+	//多行文本滚动带动clumn中滚动条滚动
+	input.onscroll=function(){
+		column.scrollTop = input.scrollTop;
+	}
+	// 为执行按钮绑定点击事件
 	var implement=document.getElementById('implement');
 	implement.onclick=implementOrder;
-	//2、 为Refresh按钮帮绑定点击事件
+	//为Refresh按钮帮绑定点击事件
 	var refresh=document.getElementById("refresh");
 	refresh.onclick=function(){
 		input.value="";
 		column.innerHTML="";
-	}
-	//3、 行数改变事件
-	input.addEventListener('keyup', rowChange,false);
-	//4、 多行文本滚动带动clumn中滚动条滚动
-	input.onscroll=function(){
-		column.scrollTop = input.scrollTop;
 	}
 }
 function init(){
