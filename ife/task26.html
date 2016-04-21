@@ -4,75 +4,151 @@
 	<title>任务二十六</title>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 	<style type="text/css">
+		body{
+			margin: 0px;
+		}
 		#universe{
+			width: 100%;
 			background: black;
-			padding: 8% 0  8% 0;
-
+			padding: 50px 200px 200px 200px;
+			float: left;
 		}
 		#planet{
-			width: 300px;
-			height: 300px;
+			width: 200px;
+			height: 200px;
 			background: blue;
+			border-radius: 100px;
+		}	
+		#track1{
+			width: 500px;
+			border-radius: 300px;
+			margin-left:200px;
+		}
+		#track2{
+			border-radius: 250px;
+		}
+		#track3{
+			border-radius: 200px;
+		}
+		#track4{
 			border-radius: 150px;
-			margin: 0 auto;
-
 		}
-
-		div[id*="ship"]{
+		div[id*=track]{
+			border:1px solid #cecece;
+			padding:49px;
+		}
+		/*.ship{
 			width: 100px;
-			height: 40px;
-			font-family: "微软雅黑";
-			position: relative;
-			text-align: center;
-			line-height: 40px;
-			border-radius: 20px;
+			height: 20px;
+			border-radius: 10px;
 			background: rgb(153,153,153);
-			margin: 0 auto 50px auto;
-		}
-		#flying{
-			width: 20px;
-			height: 40px;
+			font-family: "微软雅黑";
+			position: absolute;
+			text-align: center;
+			margin-left: 450px;
+			margin-top:-10px;
+			transition: all 1s;
+			transition-timing-function: linear;
+			transform-origin: center 310px;
+		}*/
+		
+		#energy{
+			width: 100px;
+			height: 20px;
+			border-radius: 10px;
 			background: blue;
-			float: right;
-			border-top-right-radius: 20px;
-			border-bottom-right-radius: 20px;
+			opacity: 0.3;
+			position: relative;	
+			margin-top:-16px;
 		}
-		#signal{
+		#signals{
 			width: 360px;
-			position: relative;
+			position: absolute;
 			font-size: 16px;
 			color: red;
+			margin-top:150px;
 			text-align: center;
 			font-family: "微软雅黑";
 			border:1px solid #cecece;
 		}
 		button{
-			border-width: 1px;
 			background: white;	
 			border-radius: 5px;
 			cursor: pointer;
 			font-weight: bold;
 		}	
+		div[id*=ship]{
+			width: 100px;
+			height: 20px;
+			border-radius: 10px;
+			background: rgb(153,153,153);
+			font-family: "微软雅黑";
+			position: absolute;
+			text-align: center;
+			margin-top:-60px;
+			transition: all 1s;
+			transition-timing-function: linear;
+			/*transform-origin: center 310px;*/
+		}
+		#ship1{
+			margin-left: 200px;
+			transform-origin: center 310px;
+		}
+		#ship2{
+			margin-left: 150px;
+			transform-origin: center 260px;
+		}
+		#ship3{
+			margin-left: 100px;
+			transform-origin: center 210px;
+		}
+		#ship4{
+			margin-left: 50px;
+			transform-origin: center 160px;
+		}
 	</style>
 </head>
 <body>
 	<div id="universe">
-		<div id="ship1">
-			1号-100%
-			<div id="flying">
+		<div id="list">
+		</div>
+		<div id="track1">
+			<div id="track2">
+				<div id="track3">
+					<div id="track4">
+						<div id="planet">
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div id="planet">
-		</div>
 	</div>
-	<div id="signal">
-		<div id="signal1">
+	<div id="signals">
+		<div id="signal">
 			<label>对1号飞船下达指令：</label>
-			<button id="star1">开始飞行</button>
-			<button id="stop1">停止飞行</button>
-			<button id="destroy1">销毁</button>
+			<button class="start">开始飞行</button>
+			<button class="stop">停止飞行</button>
+			<button class="destroy">销毁</button>
 		</div>
-		<button id="fly">新的飞船起飞</button>
+		<div id="signal">
+			<label>对2号飞船下达指令：</label>
+			<button class="start">开始飞行</button>
+			<button class="stop">停止飞行</button>
+			<button class="destroy">销毁</button>
+		</div>
+		<div id="signal">
+			<label>对3号飞船下达指令：</label>
+			<button class="start">开始飞行</button>
+			<button class="stop">停止飞行</button>
+			<button class="destroy">销毁</button>
+		</div>
+		<div id="signal">
+			<label>对4号飞船下达指令：</label>
+			<button class="start">开始飞行</button>
+			<button class="stop">停止飞行</button>
+			<button class="destroy">销毁</button>
+		</div>
+		<button id="new">新的飞船起飞</button>
 	</div>
 	<script src="js/task26.js"></script>
 </body>
