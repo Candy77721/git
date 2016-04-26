@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>任务三十九：UI组件之冻结行列表格</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		body{
+			font-family: "黑体";
+			font-size: 20px;
+			margin: 0px;
+		}
+		table{
+			border-spacing: 0px;
+			border: 1px solid #cecece;	
+			margin-bottom: 1000px;
+		}
+		td{
+			width: 150px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			padding: 1px;
+			border: 1px solid #cecece;
+		}
+		#title{
+			background: black;
+			color: white;
+		}
+		#test{
+			width: 10px;
+			height: 30px;
+			background: black;
+			padding: 10px;
+			float: right;
+		}
+		.top_angle,.bottom_angle{
+			background: black;
+			border-left: 5px solid transparent;
+    		border-right: 5px solid transparent;
+    		cursor: pointer;
+		}
+		.top_angle{
+			margin-bottom: 10px;
+    		border-bottom: 10px solid white;
+		}
+		.bottom_angle{
+			border-top: 10px solid white;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<table id="student_score">
+			<tr id="title">
+				<td id="name">姓名</td>
+				<td id="chinese">语文
+					<div id="test">
+						<div class="top_angle"></div>
+						<div class="bottom_angle"></div>
+					</div>
+				</td>
+				<td id="math">数学
+					<div id="test">
+						<div class="top_angle"></div>
+						<div class="bottom_angle"></div>
+					</div>
+				</td>
+				<td id="english">英语
+					<div id="test">
+						<div class="top_angle"></div>
+						<div class="bottom_angle"></div>
+					</div>
+				</td>
+				<td id="total_score">总分
+					<div id="test">
+						<div class="top_angle"></div>
+						<div class="bottom_angle"></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<script src="js/task39.js"></script>
+</body>
+</html>
