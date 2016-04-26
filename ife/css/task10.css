@@ -1,0 +1,37 @@
+@charset "utf-8";
+#mainContainer{
+	border:1px solid #cecece;
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+	padding: 20px;
+}
+#first,#second,#third,#fourth{
+	width: 110px;
+	border:1px solid red;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+#first{
+	height: 120px;
+}
+#second{
+	height: 100px;
+}
+#third{
+	height: 40px;
+}
+#fourth{
+	height: 200px;
+	border:1px solid blue;
+}
+
+@media(max-width: 640px) {
+	#mainContainer{
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+   	#fourth{
+        order: -1;
+    }
+}
