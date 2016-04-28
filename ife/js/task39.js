@@ -1,7 +1,4 @@
-/*
- *冻结表头
- *
- */
+//冻结表头
 function frozen_table(){
 	var container=document.getElementById('container');
 	var table=document.getElementById('student_score');

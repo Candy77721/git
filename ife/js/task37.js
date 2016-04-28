@@ -14,15 +14,38 @@ function rose_auto_center(){
 	rose.style.left=(screen_width-rose_width)/2+"px";
 	rose.style.top=(screen_height-rose_height)/2+"px";	
 }
-
-//初始化
-function init(){
+//显示
+function show(){
+	console.log("点击显示浮动层按钮");
+	rose.style.display="";
+	cover.style.display="";
+}
+//隐藏
+function hidden(){
+	rose.style.display="none";
+	cover.style.display="none";
+}
+//初始化数据
+function init_data(){
 	//获取屏幕当前宽高
 	screen_width=document.documentElement.clientWidth;
 	screen_height=document.documentElement.clientHeight;
 	rose=document.getElementById("rose");
+	cover=document.getElementById('cover');
+	dis=document.getElementById('display');
+}
+//移动事件
+function down(){
+	console.log(event.clientX );
+
+}
+//初始化
+function init(){
+	init_data();
 	rose_auto_center();
-	
-	
+	hidden();
+	dis.onclick=show;
+	cover.onclick=hidden;
+	rose.mousedown=down;
 }
 init();
