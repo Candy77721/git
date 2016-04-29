@@ -1,13 +1,16 @@
 //定义一个日期接口
-var interface_calendar=new Interface("interface","get_date","set_date");
+var interface_calendar=new Interface("interface","get_date","set_date","callback");
 //实现接口(设置日期和获取日期)
 var implements_calendar={
-	date:new Date(2014,8,0),
+	date:new Date(2016,4,0),
 	get_date:function(){
 		return this.date;
 	},
 	set_date:function(date){
 		this.date=date;
+	},
+	callback:function(){
+		setting_date();
 	}
 }
 //切换日期
@@ -19,18 +22,22 @@ function switch_date(){
 	if(this.id=="left"){
 		date=new Date(year,month-1,0);
 	}
-	center.childNodes[0].innerHTML=date.getFullYear();
-	center.childNodes[2].innerHTML=date.getMonth()+1;
 	implements_calendar.set_date(date);
-	clear_table_data();
-	show_calendar(get_data());
+	show_calendar(get_data(),-1);
 }
 //显示日历
-function show_calendar(day_list){
+function show_calendar(day_list,day){
 	var rows=document.getElementById('table').rows;
+	var date=implements_calendar.get_date();
+	center.childNodes[0].innerHTML=date.getFullYear();
+	center.childNodes[2].innerHTML=date.getMonth()+1;
+	clear_table_data();
 	for (var i = 0,index=1; i < day_list.length; i++) {
 		var data=day_list[i];
 		rows[index].cells[data.week].innerHTML="<div>"+data.day+"</div>";
+		if(day==data.day){
+			rows[index].cells[data.week].firstChild.style.background="yellow";
+		}
 		if(data.week==6){
 			index++;
 		}
@@ -63,7 +70,6 @@ function get_data(){
 }
 //生成日历表格
 function insert_table(){
-	var table=document.getElementById('table');
 	for(var i=1;i<7;i++){
 		var tr=table.insertRow(i);
 		for(var j=0;j<7;j++){
@@ -73,15 +79,40 @@ function insert_table(){
 		tr.cells[6].className="saturday";
 	}
 }
+//显示与隐藏日历
+function visible_calendar(){
+	if(calendar.style.display==""){
+		calendar.style.display="none";
+	}else{
+		calendar.style.display="";
+	}
+}
+//设置日期
+function setting_date(){
+	var str =input_date.value;
+	if(/^\d{4}\/[0-1]\d\/[0-3]\d$/g.test(str)){
+		alert("日期格式错误");
+		return ;
+	}
+	var date = new Date(str);
+	var year=date.getFullYear();
+	var month=date.getMonth()+1;
+	var day=date.getDate();
+	date=new Date(year,month,0);
+	implements_calendar.set_date(date);
+	show_calendar(get_data(),day);	
+	calendar.style.display="";
+}
 //绑定事件
 function onbind(){
-	var left=document.getElementById('left');
-	var right=document.getElementById('right');
 	left.onclick=switch_date;
 	right.onclick=switch_date;
+	btn_vivible.onclick=visible_calendar;
+	input_date.onblur=implements_calendar.callback;
 }
 //初始化
 function init(){
+	calendar.style.display="none";
 	insert_table();
 	onbind();
 	show_calendar(get_data());

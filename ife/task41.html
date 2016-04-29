@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>任务四十一：UI组件之日历组件（二）</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		body{
+			font-size:20px;
+			font-family: "黑体";
+		}
+		#calendar{
+			width: 510px;	
+			border: 1px solid #cecece;
+
+		}
+		#date{
+			width: 510px;
+			height: 40px;
+			background: red;
+			color: white;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		#week{
+			width: 490px;
+			padding: 0px 10px 0px 10px;
+			display: flex;
+			justify-content:space-around;
+		}
+		#left,#right{
+			background: red;
+			border-top:12px solid transparent;  
+			border-bottom:12px solid transparent;
+			cursor:pointer;
+		}
+		#left{
+			border-right: 12px solid white;
+		}
+		#right{
+			border-left: 12px solid white;
+		}
+		#center{
+			line-height:40px;	
+		}
+		.sunday,.saturday{
+			color: red;
+		}
+		td{
+			width: 70px;
+			text-align: center;
+		}
+		td>div{
+			margin:0px 15px 0px 15px;
+			border-radius: 25px;
+		}
+		td>div:hover{
+			background: yellow;
+		}
+		input{
+			width: 150px;
+			height: 30px;
+			float:left;
+			font-size: 18px;
+			padding-left: 20px;
+		}
+		button{
+			width: 36px;
+			height: 36px;
+			background: url(images/calendar.png);
+		}
+	</style>
+</head>
+<body>
+	<div id="input">
+		<input id="input_date" placeholder="YYYY-MM-DD"></input>
+		<button id="btn_vivible"></button>
+	</div>
+	<div id="calendar">
+		<div id="date">
+			<div id="left"></div>
+			<div id="center"><span></span>年<span></span>月</div>
+			<div id="right"></div>
+		</div>
+		<div id="day">
+			<table id="table">
+				<tr>
+					<td class="sunday">日</td>
+					<td>一</td>
+					<td>二</td>
+					<td>三</td>
+					<td>四</td>
+					<td>五</td>
+					<td class="saturday">六</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/Interface.js"></script>
+	<script src="js/task41.js"></script>
+</body>
+</html>
