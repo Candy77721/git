@@ -25,7 +25,10 @@ function switch_date(){
 	implements_calendar.set_date(date);
 	show_calendar(get_data(),-1);
 }
-//显示日历
+/*显示日历
+ *day_list一个月所有天的数据
+ *day 一个月具体的某一天
+ */
 function show_calendar(day_list,day){
 	var rows=document.getElementById('table').rows;
 	var date=implements_calendar.get_date();
@@ -90,15 +93,13 @@ function visible_calendar(){
 //设置日期
 function setting_date(){
 	var str =input_date.value;
-	if(/^\d{4}\/[0-1]\d\/[0-3]\d$/g.test(str)){
+	var date = new Date(str);
+	if(date=="Invalid Date"){
 		alert("日期格式错误");
 		return ;
 	}
-	var date = new Date(str);
-	var year=date.getFullYear();
-	var month=date.getMonth()+1;
 	var day=date.getDate();
-	date=new Date(year,month,0);
+	date=new Date(date.getFullYear(),date.getMonth()+1,0);
 	implements_calendar.set_date(date);
 	show_calendar(get_data(),day);	
 	calendar.style.display="";
