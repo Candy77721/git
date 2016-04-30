@@ -13,18 +13,6 @@ var implements_calendar={
 		setting_date();
 	}
 }
-//切换日期
-function switch_date(){
-	var dt=implements_calendar.get_date();
-	var year=dt.getFullYear();
-	var month=dt.getMonth()+1;
-	var date=new Date(year,(month+1),0);
-	if(this.id=="left"){
-		date=new Date(year,month-1,0);
-	}
-	implements_calendar.set_date(date);
-	show_calendar(get_data(),-1);
-}
 /*显示日历
  *day_list一个月所有天的数据
  *day 一个月具体的某一天
@@ -82,6 +70,34 @@ function insert_table(){
 		tr.cells[6].className="saturday";
 	}
 }
+//设置日期
+function setting_date(){
+	var str =input_date.value;
+	str=str.replace(/-/g, "/")
+	var value=str.match(/^(\d{1,4})(\/)(\d{1,2})\2(\d{1,2})$/); 
+	if(value==null){
+		alert("请输入格式正确的日期");
+    	return;
+	}
+	var date = new Date(str);
+	var day=date.getDate();
+	date=new Date(date.getFullYear(),date.getMonth()+1,0);
+	implements_calendar.set_date(date);
+	show_calendar(get_data(),day);	
+	calendar.style.display="";
+}
+//切换日期
+function switch_date(){
+	var dt=implements_calendar.get_date();
+	var year=dt.getFullYear();
+	var month=dt.getMonth()+1;
+	var date=new Date(year,(month+1),0);
+	if(this.id=="left"){
+		date=new Date(year,month-1,0);
+	}
+	implements_calendar.set_date(date);
+	show_calendar(get_data(),-1);
+}
 //显示与隐藏日历
 function visible_calendar(){
 	if(calendar.style.display==""){
@@ -89,20 +105,6 @@ function visible_calendar(){
 	}else{
 		calendar.style.display="";
 	}
-}
-//设置日期
-function setting_date(){
-	var str =input_date.value;
-	var date = new Date(str);
-	if(date=="Invalid Date"){
-		alert("日期格式错误");
-		return ;
-	}
-	var day=date.getDate();
-	date=new Date(date.getFullYear(),date.getMonth()+1,0);
-	implements_calendar.set_date(date);
-	show_calendar(get_data(),day);	
-	calendar.style.display="";
 }
 //绑定事件
 function onbind(){
@@ -114,8 +116,8 @@ function onbind(){
 //初始化
 function init(){
 	calendar.style.display="none";
-	insert_table();
 	onbind();
+	insert_table();
 	show_calendar(get_data());
 }
 init();
